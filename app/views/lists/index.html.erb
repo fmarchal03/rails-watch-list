@@ -1,0 +1,10 @@
+<h1>All Movies</h1>
+
+<ul>
+  <% @lists.each do |movie| %>
+    <li>
+      <%= image_tag(movie.poster_url, alt: movie.title) %>
+      <%= movie.title %> - Rating: <%= movie.rating %>
+    </li>
+  <% end %>
+</ul>

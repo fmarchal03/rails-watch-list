@@ -1,0 +1,19 @@
+<h1>Create a New List and Add a Movie</h1>
+
+<%= form_with model: @list, local: true do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :movie_ids, "Select movies to add" %>
+    <%= form.collection_select :movie_ids, Movie.all, :id, :title, {}, { multiple: true, class: 'form-control' } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create List', class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to 'Back to All Lists', lists_path, class: "btn btn-secondary" %>
