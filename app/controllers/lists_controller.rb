@@ -9,7 +9,7 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
-    @movies = Movie.all # Add this line to get all movies
+
   end
 
   def create
@@ -24,6 +24,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name, movie_ids: [])
+    params.require(:list).permit(:name)
   end
 end
